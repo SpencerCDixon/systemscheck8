@@ -1,0 +1,20 @@
+<h1 id="show_book"><%= @book.title %></h1>
+
+<h3> Book Info </h3>
+<%= @book.title %>
+<%= @book.author %>
+<%= @book.category %>
+<%= @book.year %>
+
+<% if @book.description %>
+  <%= @book.description %>
+<% end %>
+
+<%= link_to "Write a review", new_book_review_path(@book), class: "button" %>
+
+<ul>
+  <% @reviews.each do |review| %>
+    <li> <%= review.rating %>, <%= review.body %> </li>
+  <% end %>
+</ul>
+
